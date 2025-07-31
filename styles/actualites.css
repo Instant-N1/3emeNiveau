@@ -1,0 +1,215 @@
+/* Import des couleurs globales */
+:root {
+  --bleu: #0A1C44;
+  --blanc: #F2F2F2;
+  --or: #C8AD55;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bleu);
+  color: var(--blanc);
+  padding: 20px;
+}
+
+/* Bandeau de navigation */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: var(--bleu);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--blanc);
+  text-decoration: none;
+  height: 60px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: var(--blanc);
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--blanc);
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: var(--or);
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+  width: 100%;
+}
+
+/* Filtres */
+.filtres-actus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  align-items: center;
+  margin: 25px 0;
+  justify-content: space-between;
+}
+
+/* Ronds filtres actu */
+.radio-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.radio-group label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--blanc);
+  user-select: none;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.radio-group input[type="radio"] {
+  display: none;
+}
+
+/* Cercle extérieur */
+.radio-group label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2.5px solid var(--blanc);
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+/* Cercle intérieur doré quand sélectionné */
+.radio-group input[type="radio"]:checked + span::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--or);
+}
+
+.radio-group input[type="radio"]:checked + span::before {
+  border-color: var(--or);
+  box-shadow: 0 0 6px 2px var(--or);
+}
+
+/* Select Club */
+#filtre-club {
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+  background-color: #f9f9f9;
+  color: #333;
+  min-width: 160px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+#filtre-club:hover,
+#filtre-club:focus {
+  background-color: #e6e6e6;
+  outline: none;
+}
+
+/* Grille des cartes actu */
+#conteneur-actus {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  padding-bottom: 30px;
+}
+
+/* Carte actu */
+.carte-actu {
+  background: linear-gradient(145deg, #2a3d66, #1f2a4d);
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--blanc);
+}
+
+.carte-actu:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(145deg, #3b4e8a, #273863);
+}
+
+/* Image de couverture */
+.carte-actu img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Contenu article */
+.carte-actu .contenu {
+  padding: 15px;
+}
+
+.carte-actu .contenu h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.carte-actu .contenu p {
+  font-size: 13px;
+  color: #ccc;
+}

@@ -1,0 +1,142 @@
+/* Import des couleurs globales */
+:root {
+  --bleu: #0A1C44;
+  --blanc: #F2F2F2;
+  --or: #C8AD55;
+}
+
+/* Reset de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bleu);
+  color: var(--blanc);
+  padding: 20px;
+}
+
+/* ---- Filtre classement - layout similaire à joueurs.css ---- */
+
+.filtres-classements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+/* Groupe de boutons radio stylisés (type choix unique) */
+
+.radio-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  font-weight: 600;
+  font-size: 14px;
+  user-select: none;
+}
+
+.radio-group label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  color: var(--blanc);
+  transition: color 0.3s ease;
+}
+
+.radio-group label:hover {
+  color: var(--or);
+}
+
+/* Cacher les inputs natifs */
+
+.radio-group input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Cercle personnalisé */
+
+.radio-group span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--blanc);
+  border-radius: 50%;
+  background-color: transparent;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Cercle rempli quand sélectionné */
+
+.radio-group input[type="radio"]:checked + span::before {
+  background-color: var(--or);
+  border-color: var(--or);
+}
+
+/* Select style cohérent avec joueurs.css */
+
+#filtre-journee {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  min-width: 140px;
+  color: #333;
+  cursor: pointer;
+  user-select: none;
+  transition: border-color 0.3s ease;
+}
+
+#filtre-journee:hover,
+#filtre-journee:focus {
+  border-color: var(--or);
+  outline: none;
+}
+
+/* Conteneur classement (exemple tableau simple) */
+
+#conteneur-classements {
+  margin-top: 15px;
+  color: var(--blanc);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Tableau simple stylisé */
+
+table.classement-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: linear-gradient(145deg, #2a3d66, #1f2a4d);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+table.classement-table th,
+table.classement-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+table.classement-table th {
+  background-color: var(--bleu);
+  font-weight: 700;
+  color: var(--or);
+}
+
+table.classement-table tbody tr:hover {
+  background-color: rgba(200, 173, 85, 0.15);
+  cursor: default;
+}

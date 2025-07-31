@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3ème Niveau - Classements</title>
+  <link rel="stylesheet" href="../styles/joueurs.css" />
+  <link rel="stylesheet" href="../styles/classements.css" />
+</head>
+<body>
+  <!-- Bandeau navigation -->
+  <header>
+    <a href="../accueil.html" class="logo">
+      <img src="../photos/logos/3emeNiveau.jpg" alt="Logo du site" class="logo" />
+    </a>
+    <nav>
+      <ul>
+        <li><a href="joueurs.html" class="active">Joueurs</a></li>
+        <li><a href="communaute.html">Communauté</a></li>
+        <li><a href="transferts.html">Transferts</a></li>
+        <li><a href="actualites.html">Actualités</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Zone de filtres -->
+  <section class="filtres filtres-classements">
+    <!-- Choix des types de classement -->
+    <div class="radio-group">
+      <label>
+        <input type="radio" name="typeClassement" value="equipe" checked />
+        <span>Classement d'équipe</span>
+      </label>
+      <label>
+        <input type="radio" name="typeClassement" value="buteurs" />
+        <span>Classement des buteurs</span>
+      </label>
+      <label>
+        <input type="radio" name="typeClassement" value="passeurs" />
+        <span>Classement des passeurs</span>
+      </label>
+      <label>
+        <input type="radio" name="typeClassement" value="dribbleurs" />
+        <span>Classement des dribbleurs</span>
+      </label>
+      <label>
+        <input type="radio" name="typeClassement" value="gardiens" />
+        <span>Classement des gardiens</span>
+      </label>
+    </div>
+
+    <!-- Sélecteur journée -->
+    <select id="filtre-journee" aria-label="Choisir la journée">
+      <option value="all">Toutes les journées</option>
+      <!-- On génère options J1 à J34 via JS -->
+    </select>
+  </section>
+
+  <!-- Zone des résultats classement -->
+  <main id="conteneur-classements">
+    <!-- Contenu dynamique généré en JS -->
+  </main>
+
+  <script src="../scripts/classements.js"></script>
+</body>
+</html>

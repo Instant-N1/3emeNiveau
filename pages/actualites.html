@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>3ème Niveau - Actualités</title>
+  <link rel="stylesheet" href="../styles/actualites.css" />
+</head>
+<body>
+  <!-- Bandeau navigation -->
+  <header>
+    <a href="../accueil.html" class="logo">
+      <img src="../photos/logos/3emeNiveau.jpg" alt="Logo du site" class="logo" />
+    </a>
+    <nav>
+      <ul>
+        <li><a href="joueurs.html">Joueurs</a></li>
+        <li><a href="classements.html">Classements</a></li>
+        <li><a href="communaute.html">Communauté</a></li>
+        <li><a href="transferts.html">Transferts</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Filtres -->
+  <div class="filtres-actus">
+    <div class="radio-group">
+      <label>
+        <input type="radio" name="type-actu" value="toutes" checked />
+        <span></span> Tout type d'actu
+      </label>
+      <label>
+        <input type="radio" name="type-actu" value="mercato" />
+        <span></span> Mercato
+      </label>
+      <label>
+        <input type="radio" name="type-actu" value="interview" />
+        <span></span> Interview
+      </label>
+      <label>
+        <input type="radio" name="type-actu" value="resume" />
+        <span></span> Résumés de matchs
+      </label>
+      <label>
+        <input type="radio" name="type-actu" value="autres" />
+        <span></span> Autres
+      </label>
+    </div>
+
+    <select id="filtre-club">
+      <option value="tous">Tous les clubs</option>
+      <option value="dijon">Dijon</option>
+      <option value="redstar">Red Star</option>
+      <option value="martigues">Martigues</option>
+      <!-- Ajoute plus de clubs ici -->
+    </select>
+  </div>
+
+  <!-- Zone d’actualités -->
+  <div id="conteneur-actus"></div>
+
+  <script src="../scripts/actualites.js"></script>
+</body>
+</html>

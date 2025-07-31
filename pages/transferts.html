@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>3ème Niveau - Transferts</title>
+  <link rel="stylesheet" href="../styles/transferts.css" />
+</head>
+<body>
+  <!-- Bandeau navigation -->
+  <header>
+    <a href="../accueil.html" class="logo"><img src="../photos/logos/3emeNiveau.jpg" alt="Logo du site" class="logo" /></a>
+    <nav>
+      <ul>
+        <li><a href="joueurs.html">Joueurs</a></li>
+        <li><a href="classements.html">Classements</a></li>
+        <li><a href="communaute.html">Communauté</a></li>
+        <li><a href="actualites.html">Actualités</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Zone des filtres -->
+  <section class="filtres transferts-filtres">
+    <div class="filtres-radio">
+      <label>
+        <input type="radio" name="type-transfert" value="tout" checked />
+        <span>Tout type de transferts</span>
+      </label>
+      <label>
+        <input type="radio" name="type-transfert" value="libre" />
+        <span>Transfert libre</span>
+      </label>
+      <label>
+        <input type="radio" name="type-transfert" value="payant" />
+        <span>Transfert payant</span>
+      </label>
+      <label>
+        <input type="radio" name="type-transfert" value="pret" />
+        <span>Prêt</span>
+      </label>
+      <label>
+        <input type="radio" name="type-transfert" value="premier-contrat" />
+        <span>Premier contrat pro</span>
+      </label>
+    </div>
+
+    <select id="filtre-mercato">
+      <option value="ete-2025">Été 2025</option>
+      <option value="hiver-2026">Hiver 2026</option>
+      <option value="ete-2026">Été 2026</option>
+      <option value="hiver-2027">Hiver 2027</option>
+      <!-- Tu peux rajouter les saisons ici -->
+    </select>
+
+    <select id="filtre-club">
+      <option value="">Tous les clubs</option>
+      <option value="Ajaccio">AC Ajaccio</option>
+      <option value="Caen">SM Caen</option>
+      <option value="Chateauroux">Berrichonne Chateauroux</option>
+      <option value="Dijon">Dijon FCO</option>
+      <option value="Bourg-en-Bresse">Bourg-en-Bresse</option>
+      <option value="Aubagne">Aubagne FC</option>
+      <option value="Orléans">US Orléans</option>
+      <option value="Concarneau">US Concarneau</option>
+      <option value="Valenciennes">Valenciennes FC</option>
+      <option value="Rouen">FC Rouen</option>
+      <option value="Quevilly-Rouen">Quevilly-Rouen</option>
+      <option value="Sochaux">FC Sochaux Montbéliard</option>
+      <option value="Versailles">FC Versailles</option>
+      <option value="Paris 13">Paris 13 Atletico</option>
+      <option value="Villefranche">FC Villefranche</option>
+      <option value="Le Puy">Le Puy Foot</option>
+      <option value="Fleury">FC Fleury</option>
+      <option value="Saint-Brieuc">Stade Briochin</option>
+    </select>
+  </section>
+
+  <!-- Zone des cartes transferts -->
+  <main id="conteneur-transferts"></main>
+
+  <script src="../scripts/transferts.js"></script>
+</body>
+</html>

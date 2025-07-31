@@ -1,0 +1,151 @@
+:root {
+  --bleu: #0A1C44;
+  --blanc: #F2F2F2;
+  --or: #C8AD55;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bleu);
+  color: var(--blanc);
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: var(--bleu);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+header .logo img {
+  height: 60px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: var(--blanc);
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--blanc);
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: var(--or);
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+  width: 100%;
+}
+
+/* TOPBAR AVEC ONGLET */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #091634;
+  padding: 12px 30px;
+  border-bottom: 2px solid var(--or);
+}
+
+.nav-onglets {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-onglets button {
+  background: transparent;
+  border: none;
+  color: var(--blanc);
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+}
+
+.nav-onglets button.active {
+  border-bottom: 3px solid var(--or);
+  color: var(--or);
+}
+
+/* BOUTON CONNEXION */
+.zone-connexion button {
+  background-color: var(--or);
+  color: #000;
+  border: none;
+  padding: 8px 14px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.zone-connexion button:hover {
+  background-color: #b89c45;
+}
+
+/* SECTIONS */
+.contenu-communautaire {
+  padding: 30px;
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+/* PLACEHOLDER */
+.placeholder {
+  background: linear-gradient(145deg, #2a3d66, #1f2a4d);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  color: var(--blanc);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.placeholder h2 {
+  color: var(--or);
+  margin-bottom: 12px;
+  font-size: 24px;
+}
+
+.placeholder p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ddd;
+}

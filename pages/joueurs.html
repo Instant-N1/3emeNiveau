@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3ème Niveau - Joueurs</title>
+  <link rel="stylesheet" href="../styles/joueurs.css" />
+</head>
+<body>
+  <!-- Bandeau navigation -->
+  <header>
+    <a href="../accueil.html" class="logo"><img src="../photos/logos/3emeNiveau.jpg" alt="Logo du site" class="logo" /></a>
+    <nav>
+	<ul>
+      		<li><a href="classements.html">Classements</a>
+      		<li><a href="communaute.html">Communauté</a>
+      		<li><a href="transferts.html">Transferts</a>
+      		<li><a href="actualites.html">Actualités</a>
+	</ul>
+    </nav>
+  </header>
+
+  <!-- Zone de filtres -->
+  <section class="filtres">
+    <input type="text" id="filtre-prénom" placeholder="Rechercher par prénom..." />
+    <input type="text" id="filtre-nom" placeholder="Rechercher par nom..." />
+    <select id="filtre-poste">
+      <option value="">Tous les postes</option>
+      <option value="Gardien">Gardien</option>
+      <option value="Défenseur">Défenseur central</option>
+      <option value="Latéral">Latéral</option>
+      <option value="MilieuDef">Milieu récupérateur</option>
+      <option value="Milieu">Milieu relayeur</option>
+      <option value="MilieuOff">Milieu offensif</option>
+      <option value="Ailier">Ailier</option>
+      <option value="Buteur">Avant-centre</option>
+    </select>
+    <input type="number" id="filtre-passes" placeholder="Indice de performance 3èmeNiveau" min="0" max="100" />
+    <input type="number" id="filtre-age" placeholder="Année de naissance" min="1970" max="2010" />
+    <select id="filtre-club">
+      <option value="">Tous les clubs</option>
+      <option value="Ajaccio">AC Ajaccio</option>
+      <option value="Caen">SM Caen</option>
+      <option value="Chateauroux">Berrichonne Chateauroux</option>
+      <option value="Dijon">Dijon FCO</option>
+      <option value="Bourg-en-Bresse">Bourg-en-Bresse</option>
+      <option value="Aubagne">Aubagne FC</option>
+      <option value="Orléans">US Orléans</option>
+      <option value="Concarneau">US Concarneau</option>
+      <option value="Valenciennes">Valenciennes FC</option>
+      <option value="Rouen">FC Rouen</option>
+      <option value="Quevilly-Rouen">Quevilly-Rouen</option>
+      <option value="Sochaux">FC Sochaux Montbéliard</option>
+      <option value="Versailles">FC Versailles</option>
+      <option value="Paris 13">Paris 13 Atletico</option>
+      <option value="Villefranche">FC Villefranche</option>
+      <option value="Le Puy">Le Puy Foot</option>
+      <option value="Fleury">FC Fleury</option>
+      <option value="Saint-Brieuc">Stade Briochin</option>
+    </select>
+  </section>
+
+  <!-- Zone des cartes joueurs -->
+  <main id="conteneur-joueurs"></main>
+
+  <script src="../scripts/joueurs.js"></script>
+</body>
+</html>
